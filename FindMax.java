@@ -46,4 +46,26 @@ public class FindMax {
 			}
 			return max;
 	}
+	
+	/*
+	 * This method to find tha maximum string
+	 */
+	public String findMaxString(String str1, String str2, String str3, String max) {
+		max = " ";
+		//compare three numbers
+		if(str1.compareTo(str2) > 0 && str1.compareTo(str3) > 0) {
+			max = str1;
+			System.out.println(str1);
+			System.out.println(max + "is maximum");
+		}
+		else if (str2.compareTo(str3) > 0) {
+			max = str2;
+			System.out.println(max + "is maximum");
+		}
+		else {
+			max = str3;
+			System.out.println(max + "is maximum");
+		}
+		return max;		
+	}
 }
