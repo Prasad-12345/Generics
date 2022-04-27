@@ -199,4 +199,24 @@ class FindMaxTest {
 		//Test condition
 		Assert.assertSame(expectedResult, actualResult);
 	}
+	
+	/*
+	 * Test case to find maximum input using generic method
+	 */
+	@Test
+	public <T> void toCheckMaxInput() {
+		//object
+		FindMaxGenericMethod findMax1 = new FindMaxGenericMethod();
+		T maxInput = (T) findMax1.findMaxInput(50, 100, 500, null);
+		//Test condition
+		Assert.assertEquals(500, maxInput);
+		
+		maxInput = (T) findMax1.findMaxInput(50.5, 100.8, 500.53, null);
+		//Test condition
+		Assert.assertEquals(500.53, maxInput);
+		
+		maxInput = (T) findMax1.findMaxInput("z", "b", "c", null);
+		//Test condition
+		Assert.assertEquals("z", maxInput);
+	}
 }
