@@ -133,4 +133,70 @@ class FindMaxTest {
 		//Test condition
 		Assert.assertEquals(expectedResult, actualResult, 0.0f);
 	}
+	
+	/*
+	 * Test case to check maximum string is at first position
+	 */
+	@Test
+	public void maxStringAtFirstPosition() {
+		//Input strings
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first string");	
+		String str1 = sc.next();
+		System.out.println("Enter second string");
+		String str2 = sc.next();
+		System.out.println("Enter third string");
+		String str3 = sc.next();
+		String max = null;
+		//object
+		FindMax findMax = new FindMax();
+		String actualResult = findMax.findMaxString(str1, str2, str3, max);
+		String expectedResult = str1;
+		//Test condition
+		Assert.assertSame(expectedResult, actualResult);
+	}
+	
+	/*
+	 * Test case to check maximum string is at second position
+	 */
+	@Test
+	public void maxStringAtSecondPosition() {
+		//Input strings
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first string");	
+		String str1 = sc.next();
+		System.out.println("Enter second string");
+		String str2 = sc.next();
+		System.out.println("Enter third string");
+		String str3 = sc.next();
+		String max = null;
+		//object
+		FindMax findMax = new FindMax();
+		String actualResult = findMax.findMaxString(str1, str2, str3, max);
+		String expectedResult = str2;
+		//Test condition
+		Assert.assertSame(expectedResult, actualResult);
+	}
+	
+	/*
+	 * Test case to check maximum string is at third position
+	 */
+	@Test
+	public void maxStringAtThirdPosition() {
+		//Input strings
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first string");	
+		String str1 = sc.next();
+		System.out.println("Enter second string");
+		String str2 = sc.next();
+		System.out.println("Enter third string");
+		String str3 = sc.next();
+		String max = null;
+		//object
+		FindMax findMax = new FindMax();
+		String actualResult = findMax.findMaxString(str1, str2, str3, max);
+		String expectedResult = str3;
+		//Test condition
+		Assert.assertSame(expectedResult, actualResult);
+	}
 }
