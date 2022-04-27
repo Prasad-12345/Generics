@@ -206,16 +206,35 @@ class FindMaxTest {
 	@Test
 	public <T> void toCheckMaxInput() {
 		//object
-		FindMaxGenericMethod findMax1 = new FindMaxGenericMethod();
-		T maxInput = (T) findMax1.findMaxInput(50, 100, 500, null);
+		FindMaxGeneric findMax1 = new FindMaxGeneric(null, null, null);
+		T maxInput = (T) findMax1.findMaxInput(50, 100, 500);
 		//Test condition
 		Assert.assertEquals(500, maxInput);
 		
-		maxInput = (T) findMax1.findMaxInput(50.5, 100.8, 500.53, null);
+		maxInput = (T) findMax1.findMaxInput(50.5, 100.8, 500.53);
 		//Test condition
 		Assert.assertEquals(500.53, maxInput);
 		
-		maxInput = (T) findMax1.findMaxInput("z", "b", "c", null);
+		maxInput = (T) findMax1.findMaxInput("z", "b", "c");
+		//Test condition
+		Assert.assertEquals("z", maxInput);
+	}
+	
+	/*
+	 * Test case to use generic class
+	 */
+	@Test
+	public <T> void toCheckGeneriClass() {
+		FindMaxGeneric findMax1 = new FindMaxGeneric(null, null, null);
+		T maxInput = (T) new FindMaxGeneric<Integer>(50, 60, 100).findMaxInput();
+		//Test condition
+		Assert.assertEquals(100, maxInput);
+		
+		maxInput = (T) new FindMaxGeneric<Double>(50.5, 60.8, 100.4).findMaxInput();
+		//Test condition
+		Assert.assertEquals(100.4, maxInput);
+		
+		maxInput = (T) new FindMaxGeneric<String>("z", "b", "c").findMaxInput();
 		//Test condition
 		Assert.assertEquals("z", maxInput);
 	}
